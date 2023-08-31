@@ -1,0 +1,32 @@
+
+<div class="container text-center">
+  <h2>Cadastro de Clientes</h2>
+  <hr>
+  <div class="text-left">
+    <a href="/admin/cadastros/add"><button class="btn btn-success mt-2" >Novo Cadastro</button></a>
+  </div>
+  
+  <table class="table table-info mt-2">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Celular</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each cadastros}}
+        <tr>
+          <th scope="row">{{nome}}</th>
+          <th scope="row">{{celular}}</th>
+          <th scope="row"><a href="/admin/cadastros/edit/{{_id}}"><button class="btn btn-primary"><i class="glyphicon glyphicon-pencil" style="font-size:16px;"></i> </button></a></th> 
+          <th scope="row"><a href="/admin/cadastros/delete/{{_id}}"><button class="btn btn-danger"> <i class="glyphicon glyphicon-trash"></i> </button></a></th>
+        </tr>
+      {{else}}
+
+
+      {{/each}}
+    </tbody>
+  </table>
+

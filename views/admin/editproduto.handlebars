@@ -1,0 +1,26 @@
+{{#each erros}}
+  <div class="alert alert-danger">{{texto}}</div>
+{{else}}
+{{/each}}
+<h3>Editando Produto:</h3>
+<div class="card">
+  <div class="card-body">
+      <form action="/admin/produtos/edit" method="POST">
+        <input type="hidden" name="id" value="{{produto._id}}">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Codigo</label>
+          <input type="text" class="form-control" name="codigo" aria-describedby="emailHelp" placeholder="Entre com o codigo" value="{{produto.codigo}}">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Descricao</label>
+          <input type="text" class="form-control" name="descricao" aria-describedby="emailHelp" placeholder="Enter com a descricao" value="{{produto.descricao}}">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Preço Padrão</label>
+          <input type="number" step="0.00001" class="form-control" name="precopadrao" aria-describedby="emailHelp" placeholder="Enter com o preço padrão" value="{{produto.precopadrao}}">
+        </div>
+        <br/>
+        <button type="submit" class="btn btn-primary">Salvar Edição</button>
+      </form>
+  </div>
+</div>
